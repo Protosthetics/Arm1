@@ -1,20 +1,21 @@
 /*
- * Title: Protosthetics Arm v1
- * Date: 3-14-15
+ * Title: PAL (Printed Artificial Arm) v1
+ * Date: 7-23-15
  * Protosthetics.com
- * Desc: Basic code to allow the actuation a servo (closing of
- *       a prosthetic hand) based on bicep movement.
- *       The hand should open and close using a toggle 
- *       method.
+ * Desc: Code to allow the actuation a servos using the 3-channel EMG board
  */
 
 // Library for servo use
 #include <Servo.h>
 
-// Digital pin for servo motor
-int servo_pin = 9;
-// Analog pin for the muscle sensor
-int muscle_pin = A0;
+// Digital pins for servo motors
+int servo_pin1 = 9; //Hand
+int servo_pin2 = 10; //Wrist
+int servo_pin3 = 11 //Elbow
+// Analog pins for the muscle sensor channels
+int muscle_pin1 = A0; //Bicep
+int muscle_pin2 = A1; //Neck?
+int muscle_pin3 = A2; //Back?
 
 // Threshold value that allows the hand to open and close.
 // The scaled value of the muscle sensor's value is compared
